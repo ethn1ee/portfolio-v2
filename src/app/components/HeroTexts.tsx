@@ -22,7 +22,7 @@ const HeroTexts = () => {
         <AnimatedText>TAEHOON</AnimatedText>
         <AnimatedText>LEE</AnimatedText>
         <i className={`${ABCGramercyDisplay.className} antialiased`}>
-          <AnimatedText>(ETHAN)</AnimatedText>
+          <AnimatedText>(ETHAN)&nbsp;</AnimatedText>
         </i>
       </h1>
       <h1
