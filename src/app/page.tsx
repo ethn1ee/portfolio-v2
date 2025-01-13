@@ -1,3 +1,5 @@
+"use client";
+
 import HeroTexts from "./components/HeroTexts";
 import WavingHand from "./components/WavingHand";
 

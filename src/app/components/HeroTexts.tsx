@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ABCFavoritMonoVF, ABCGramercyDisplay } from "./Fonts";
 import LinkButton from "./LinkButton";
+import AnimatedText from "./AnimatedText";
 
 const HeroTexts = () => {
   const [now, setNow] = useState(new Date());
@@ -10,7 +11,7 @@ const HeroTexts = () => {
   useEffect(() => {
     const intervalId = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [now, setNow]);
 
   return (
     <>
@@ -18,18 +19,21 @@ const HeroTexts = () => {
       <h1
         className={`${ABCGramercyDisplay.className} antialiased font-bold absolute top-10 left-10 text-8xl`}
       >
-        TAEHOON <br /> LEE
-        <br />
-        <i className={`${ABCGramercyDisplay.className} antialiased`}>(ETHAN)</i>
+        <AnimatedText>TAEHOON</AnimatedText>
+        <AnimatedText>LEE</AnimatedText>
+        <i className={`${ABCGramercyDisplay.className} antialiased`}>
+          <AnimatedText>(ETHAN)</AnimatedText>
+        </i>
       </h1>
       <h1
-        className={`${ABCGramercyDisplay.className} antialiased font-bold absolute bottom-10 right-10 text-8xl text-right`}
+        className={`${ABCGramercyDisplay.className} antialiased font-bold fixed bottom-10 right-10 text-8xl text-right`}
       >
-        CREATIVE <br /> DEVELOPER
+        <AnimatedText>CREATIVE</AnimatedText>
+        <AnimatedText>DEVELOPER</AnimatedText>
       </h1>
 
       {/* SUBHEADINGS */}
-      <div className="font-bold absolute top-10 right-10 text-2xl text-right">
+      <div className="font-bold fixed top-10 right-10 text-2xl text-right">
         <h2 className="text-2xl font-bold mb-1">ATLANTA, GA</h2>
         <h3
           className={`${ABCFavoritMonoVF.className} text-base font-normal text-gray-400 leading-5`}
@@ -39,9 +43,12 @@ const HeroTexts = () => {
           {now.getHours()}:{now.getMinutes()}:{now.getSeconds()}
         </h3>
       </div>
-      <div className="absolute bottom-10 left-10 text-lg flex flex-col gap-2">
+      <div className="fixed bottom-10 left-10 text-lg flex flex-col gap-2">
         <LinkButton href={"https://github.com/ethn1ee"} text={"GITHUB"} />
-        <LinkButton href={"https://linkedin.com/in/ethn1ee"} text={"LINKEDIN"} />
+        <LinkButton
+          href={"https://linkedin.com/in/ethn1ee"}
+          text={"LINKEDIN"}
+        />
       </div>
     </>
   );
