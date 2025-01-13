@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { ABCFavoritMonoVF, ABCGramercyDisplay } from "./Fonts";
-import Link from "next/link";
-import { motion } from "motion/react";
 import LinkButton from "./LinkButton";
 
 const HeroTexts = () => {
