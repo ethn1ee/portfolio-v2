@@ -28,16 +28,16 @@ const AnimatedText = ({ children }: AnimatedTextProps) => {
   }, [scrollYProgress]);
 
   return (
-    <div
+    <span
       ref={scope}
-      className="relative overflow-y-hidden overflow-x-visible w-fit"
+      className="relative overflow-y-hidden overflow-x-visible w-fit inline-block text-inherit"
     >
       {children.split("").map((char, index) => (
         <span key={index} className="stagger inline-block">
           {char}
         </span>
       ))}
-    </div>
+    </span>
   );
 };
 

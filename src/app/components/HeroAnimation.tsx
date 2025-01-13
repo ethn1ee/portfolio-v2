@@ -6,7 +6,7 @@ import coffee from "../../../public/ascii_arts/coffee.json";
 import { motion } from "motion/react";
 import { ABCFavoritMonoVF } from "./Fonts";
 
-const WavingHand = () => {
+const HeroAnimation = () => {
   const [frame, setFrame] = useState<number>(0);
   const [play, setPlay] = useState<boolean>(true);
   const asciiAnimation = coffee;
@@ -25,9 +25,9 @@ const WavingHand = () => {
       onClick={() => setPlay(true)}
       whileHover={{
         fontWeight: 700,
-        color: "#ffffff",
+        // color: "#ffffff",
         // scale: 1.02,
-        textShadow: "0px 4px 12px rgba(255, 255, 255, 0.40)",
+        textShadow: "0px 4px 12px rgba(255, 255, 255, 0.30)",
       }}
       whileTap={{ scale: 0.97 }}
       className={`${ABCFavoritMonoVF.className} text-gray-300 whitespace-pre text-sm cursor-pointer leading-4`}
@@ -37,4 +37,4 @@ const WavingHand = () => {
   );
 };
 
-export default WavingHand;
+export default HeroAnimation;

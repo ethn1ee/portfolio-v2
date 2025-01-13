@@ -17,18 +17,21 @@ const HeroTexts = () => {
     <>
       {/* MAIN HEADINGS */}
       <h1
-        className={`${ABCGramercyDisplay.className} antialiased font-bold absolute top-10 left-10 text-8xl`}
+        className={`${ABCGramercyDisplay.className} antialiased font-bold absolute top-10 left-10 text-8xl leading-[5rem]`}
       >
         <AnimatedText>TAEHOON</AnimatedText>
+        <br />
         <AnimatedText>LEE</AnimatedText>
+        <br />
         <i className={`${ABCGramercyDisplay.className} antialiased`}>
           <AnimatedText>(ETHAN)&nbsp;</AnimatedText>
         </i>
       </h1>
       <h1
-        className={`${ABCGramercyDisplay.className} antialiased font-bold fixed bottom-10 right-10 text-8xl text-right`}
+        className={`${ABCGramercyDisplay.className} antialiased font-bold fixed bottom-10 right-10 text-8xl text-right leading-[5rem]`}
       >
         <AnimatedText>CREATIVE</AnimatedText>
+        <br />
         <AnimatedText>DEVELOPER</AnimatedText>
       </h1>
 
