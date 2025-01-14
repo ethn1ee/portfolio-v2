@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ABCGramercyVF } from "./components/Fonts";
+import { ABCGramercyVF } from "./_components/Fonts";
 
 export const metadata: Metadata = {
   title: "Taehoon Lee",

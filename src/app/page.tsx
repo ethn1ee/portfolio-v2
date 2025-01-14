@@ -1,11 +1,11 @@
 "use client";
 
-import HeroTexts from "./components/HeroTexts";
-import HeroAnimation from "./components/HeroAnimation";
+import HeroAnimation from "./_components/HeroAnimation";
+import HeroTexts from "./_components/HeroTexts";
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center h-screen">
+    <main>
       <HeroTexts />
       <HeroAnimation />
     </main>

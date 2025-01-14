@@ -7,9 +7,10 @@ import { useState } from "react";
 interface LinkButtonProps {
   href: string;
   text: string;
+  target?: string;
 }
 
-const LinkButton = ({ href, text }: LinkButtonProps) => {
+const LinkButton = ({ href, text, target = "_blank" }: LinkButtonProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const underlineStyle = {
@@ -20,7 +21,7 @@ const LinkButton = ({ href, text }: LinkButtonProps) => {
   return (
     <Link
       href={href}
-      target="_blank"
+      target={target}
       rel="noreferrer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -28,9 +29,7 @@ const LinkButton = ({ href, text }: LinkButtonProps) => {
     >
       {text}
       <motion.div
-        animate={
-          isHovered ? underlineStyle.hover : underlineStyle.default
-        }
+        animate={isHovered ? underlineStyle.hover : underlineStyle.default}
       />
     </Link>
   );

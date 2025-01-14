@@ -1,6 +1,10 @@
 "use client";
 
-import { useAnimate, stagger, useScroll } from "motion/react";
+import {
+  motion,
+  useAnimate,
+  stagger,
+} from "motion/react";
 import { useEffect } from "react";
 
 interface AnimatedTextProps {
@@ -9,7 +13,6 @@ interface AnimatedTextProps {
 
 const AnimatedText = ({ children }: AnimatedTextProps) => {
   const [scope, animate] = useAnimate();
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     animate(
@@ -23,21 +26,18 @@ const AnimatedText = ({ children }: AnimatedTextProps) => {
     );
   }, [animate]);
 
-  useEffect(() => {
-    console.log(scrollYProgress);
-  }, [scrollYProgress]);
-
   return (
-    <span
+    <motion.span
       ref={scope}
+      transition={{ duration: 0.2 * children.length }}
       className="relative overflow-y-hidden overflow-x-visible w-fit inline-block text-inherit"
     >
       {children.split("").map((char, index) => (
         <span key={index} className="stagger inline-block">
-          {char}
+          {char === " " ? <>&nbsp;</> : char}
         </span>
       ))}
-    </span>
+    </motion.span>
   );
 };
 
